@@ -8,15 +8,14 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 
-public class Invader_Animation : MonoBehaviour
+public class Invader : MonoBehaviour
 {
-
     public Sprite[] animationSprites = new Sprite[2];
     public float animationTime;
 
     SpriteRenderer spRend;
     int animationFrame;
-
+    // Start is called before the first frame update
 
     private void Awake()
     {
@@ -24,28 +23,30 @@ public class Invader_Animation : MonoBehaviour
         spRend.sprite = animationSprites[0];
     }
 
-    private void Start()
+    void Start()
     {
-
+        //Anropar AnimateSprite med ett visst tidsintervall
+        InvokeRepeating( nameof(AnimateSprite) , animationTime, animationTime);
     }
 
+    //pandlar mellan olika sprited för att skapa en animation
     private void AnimateSprite()
     {
         animationFrame++;
-        if (animationFrame >= animationSprites.Length)
+        if(animationFrame >= animationSprites.Length)
         {
             animationFrame = 0;
         }
         spRend.sprite = animationSprites[animationFrame];
     }
 
-    private void OnTriggerEnter2D(Collider2D Collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(Collision.gameObject.layer == LayerMask.NameToLayer("Layer"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Laser"))
         {
             GameManager.Instance.OnInvaderKilled(this);
         }
-        else if (Collision.gameObject.layer == LayerMask.NameToLayer("Boundary"))
+        else if(collision.gameObject.layer == LayerMask.NameToLayer("Boundary")) //nått nedre kanten
         {
             GameManager.Instance.OnBoundaryReached();
         }
