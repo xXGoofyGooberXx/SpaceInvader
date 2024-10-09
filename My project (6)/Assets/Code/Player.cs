@@ -46,4 +46,6 @@ public class Player : MonoBehaviour
             GameManager.Instance.OnPlayerKilled(this);
         }
     }
+
+    //if missle hit payer, player lose dmg
 }
