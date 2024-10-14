@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     //Används ej just nu, men ni kan använda de senare
     public int score { get; private set; } = 0;
-    public int lives { get; private set; } = 3;
+    public int lives { get; private set; } = 5;
 
     private void Awake()
     {
@@ -98,6 +98,8 @@ public class GameManager : MonoBehaviour
     {
        
     }
+
+    //if missle hit player, player lose dmg
 
     public void OnPlayerKilled(Player player)
     {

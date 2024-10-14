@@ -47,5 +47,4 @@ public class Player : MonoBehaviour
         }
     }
 
-    //if missle hit payer, player lose dmg
 }
