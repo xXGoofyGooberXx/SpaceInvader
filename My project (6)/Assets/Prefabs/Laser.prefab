@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 4205886027912128622}
   - component: {fileID: 8681522311354264410}
   - component: {fileID: 7892609878914126681}
-  m_Layer: 0
-  m_Name: Invader_ 4
+  - component: {fileID: 3252542173696982235}
+  m_Layer: 8
+  m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -109,10 +110,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Interpolate: 1
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &7892609878914126681
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -158,3 +159,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.125, y: 0.375}
   m_EdgeRadius: 0
+--- !u!114 &3252542173696982235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2320209058213846214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52d45f63e8b0a545b7a0be303444383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

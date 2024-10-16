@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4205886027912128622}
   - component: {fileID: 8681522311354264410}
   - component: {fileID: 7892609878914126681}
-  - component: {fileID: -6265168109749061217}
-  m_Layer: 0
+  - component: {fileID: -8696952453728697940}
+  m_Layer: 7
   m_Name: Invader_ 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -110,10 +110,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Interpolate: 1
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &7892609878914126681
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-6265168109749061217
+--- !u!114 &-8696952453728697940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,6 +168,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2320209058213846214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc7e9f0ae6aae174398fa68273bbd3ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 4afb15d6ac6b81f499c693e9013b7a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationSprites:
+  - {fileID: 21300000, guid: d4276f6c29507a241aa5ec7fc27991f4, type: 3}
+  - {fileID: 21300000, guid: 01bb014251c60f641a77e1bbb61cc660, type: 3}
+  animationTime: 0
