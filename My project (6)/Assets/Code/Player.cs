@@ -39,11 +39,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    int hp = 3;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Missile") || collision.gameObject.layer == LayerMask.NameToLayer("Invader"))
         {
-            GameManager.Instance.OnPlayerKilled(this);
+            hp -= 1;
+            if (hp == 0)
+            {
+                GameManager.Instance.OnPlayerKilled(this);
+            }
         }
     }
 

@@ -22,11 +22,12 @@ public class Invader : MonoBehaviour
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = animationSprites[0];
     }
-
+    private CameraShake cameraShake;
     void Start()
     {
         //Anropar AnimateSprite med ett visst tidsintervall
         InvokeRepeating( nameof(AnimateSprite) , animationTime, animationTime);
+        cameraShake = Camera.main.GetComponent<CameraShake>();
     }
 
     //pandlar mellan olika sprited för att skapa en animation
@@ -45,6 +46,7 @@ public class Invader : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Laser"))
         {
             GameManager.Instance.OnInvaderKilled(this);
+            cameraShake.TriggerShake();
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Boundary")) //nått nedre kanten
         {

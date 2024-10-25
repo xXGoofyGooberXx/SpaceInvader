@@ -19,6 +19,7 @@ public class MysteryShip : MonoBehaviour
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
 
+        cameraShake = Camera.main.GetComponent<CameraShake>();
         //positionen där den kommer stanna utanför skärmen.
         leftDestination = new Vector2(leftEdge.x - 1f, transform.position.y);
         rightDestination = new Vector2(rightEdge.x + 1f, transform.position.y);
@@ -80,13 +81,14 @@ public class MysteryShip : MonoBehaviour
 
         isVisible = true;
     }
-
+    private CameraShake cameraShake;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Laser"))
         {
             SetInvisible();
             GameManager.Instance.OnMysteryShipKilled(this);
+            cameraShake.TriggerShake();
         }
     }
 }
